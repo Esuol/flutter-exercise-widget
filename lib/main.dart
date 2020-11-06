@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget titleSection = new Container(
-      padding: const EdgeInsets.all(32),
+      padding: const EdgeInsets.all(32.0),
       child: new Row(
         children: [
           new Expanded(
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 new Container(
-                  padding: const EdgeInsets.only(bottom: 8),
+                  padding: const EdgeInsets.only(bottom: 8.0),
                   child: new Text(
                     'Oeschinen Lake Campground',
                     style: new TextStyle(
