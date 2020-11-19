@@ -46,14 +46,12 @@ class SamplePageContent extends StatelessWidget {
           new Row(
             children: <Widget>[
               new Container(
-                width: 52.0,
-                height: 52.0,
-                margin: const EdgeInsets.only(left: 16.0),
-                child: new CircleAvatar(
-                  backgroundImage: new AssetImage('assets/images/avatar2.png'),
-                )
-              ),
-
+                  width: 52.0,
+                  height: 52.0,
+                  margin: const EdgeInsets.only(left: 16.0),
+                  child: new CircleAvatar(
+                    backgroundImage: new AssetImage('assets/images/avatar2.png'),
+                  )),
               new Container(
                 margin: const EdgeInsets.only(left: 7.0, right: 15.0),
                 height: 48.0,
@@ -65,10 +63,7 @@ class SamplePageContent extends StatelessWidget {
                       top: 14.0,
                       child: new Text(
                         "张老师发布了一个任务，请查收",
-                        style: new TextStyle(
-                          fontSize: 14.0,
-                          color: Colors.black
-                        ),
+                        style: new TextStyle(fontSize: 14.0, color: Colors.black),
                       ),
                     ),
                   ],
@@ -76,10 +71,33 @@ class SamplePageContent extends StatelessWidget {
               ),
             ],
           ),
+
           // Line 3
-          new Row(),
+          new Row(
+            new Container(
+              margin: const EdgeInsets.fromLTRB(6.0, 24.0, 6.0, 30.0),
+              child: new RoundInnerSquareBox(),
+            ),
+          ),
+
+          // Line 4
         ],
       ),
     );
+  }
+}
+
+class RoundInnerSquareBox extends StatelessWidget {
+  static const double gap = 12.0;
+
+  RoundInnerSquareBox({
+    @required this.child,
+  });
+
+  final Widget child;
+
+  @override
+  Widget build (BuildContext context) {
+    
   }
 }
