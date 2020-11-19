@@ -92,47 +92,31 @@ class SamplePageContent extends StatelessWidget {
                   new Wrap(
                     alignment: WrapAlignment.start,
                     children: <Widget>[
-                      new WorkTotalItem(
-                        title: "课文跟读 1"
-                      ),
-                       new WorkTotalItem(
-                        title: "课文跟读 2"
-                      ),
-                       new WorkTotalItem(
-                        title: "课文跟读 3"
-                      ),
-                       new WorkTotalItem(
-                        title: "课文跟读 4"
-                      )
+                      new WorkTotalItem(title: "课文跟读 1"),
+                      new WorkTotalItem(title: "课文跟读 2"),
+                      new WorkTotalItem(title: "课文跟读 3"),
+                      new WorkTotalItem(title: "课文跟读 4")
                     ],
                   ),
                   new Container(
-                    margin: const EdgeInsets.only(left: 178.0),
-                    child: new Stack(
-                      children: <Widget>[
-                        new Image.asset('assets/images/publish_work_sign.png'),
-                        new Positioned(
-                          left: 4.0,
-                          top: 4.0,
-                          child: new Text(
-                            "预习",
-                            style: new TextStyle(
-                              fontSize: 14.0,
-                              color: Colors.white
-                            ),
-                          )
-                        ),
-                      ],
-                    )
-                  ),
+                      margin: const EdgeInsets.only(left: 178.0),
+                      child: new Stack(
+                        children: <Widget>[
+                          new Image.asset('assets/images/publish_work_sign.png'),
+                          new Positioned(
+                              left: 4.0,
+                              top: 4.0,
+                              child: new Text(
+                                "预习",
+                                style: new TextStyle(fontSize: 14.0, color: Colors.white),
+                              )),
+                        ],
+                      )),
                   new Container(
                     alignment: Alignment.topRight,
                     child: new Text(
                       "明天12.截止",
-                      style: new TextStyle(
-                        fontSize: 14.0,
-                        color: const Color(0xFFFFC1C1)
-                      ),
+                      style: new TextStyle(fontSize: 14.0, color: const Color(0xFFFFC1C1)),
                     ),
                   )
                 ],
@@ -180,14 +164,46 @@ class WorkTotalItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Container(
-      padding: const EdgeInsets.all(6.0),
-      child: new Text(
-        "$title",
-        style: new TextStyle(
-          fontSize: 14.0,
-          color: Colors.white
-        )
-      )
+        padding: const EdgeInsets.all(6.0),
+        child: new Text("$title", style: new TextStyle(fontSize: 14.0, color: Colors.white)));
+  }
+}
+
+class LineTips extends StatelessWidget {
+  static const defaultMargin = const EdgeInsets.only(left: 15.0, right: 15.0);
+
+  LineTips({
+    @required this.title,
+    this.margin = defaultMargin,
+  });
+
+  final Widget title;
+  final EdgeInsetsGeometry margin;
+
+  @override
+  Widget build(BuildContext context) {
+    return new Padding (
+      padding: defaultMargin,
+      child: new Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          new Expanded(
+            child: new Container(
+              margin: const EdgeInsets.only(right: 10.0),
+              color: const Color(0xFFD4CFE4),
+              height: 1.0,
+            ),
+          ),
+          title,
+          new Expanded(
+            child: new Container(
+              margin: const EdgeInsets.only(left: 10.0),
+              color: const Color(0xFFD4CFE4),
+              height: 1.0,
+            ),
+          )
+        ],
+      ),
     );
   }
 }
