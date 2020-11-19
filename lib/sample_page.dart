@@ -73,10 +73,36 @@ class SamplePageContent extends StatelessWidget {
           ),
 
           // Line 3
-          new Row(
-            new Container(
-              margin: const EdgeInsets.fromLTRB(6.0, 24.0, 6.0, 30.0),
-              child: new RoundInnerSquareBox(),
+          new Container(
+            margin: const EdgeInsets.fromLTRB(6.0, 24.0, 6.0, 30.0),
+            child: new RoundInnerSquareBox(
+              child: new Container(
+                padding: const EdgeInsets.fromLTRB(24.0, 28.0, 24.0, 12.0),
+                width: double.infinity,
+                child: new Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    new Text(
+                      "unit 1 lesson e about animal",
+                      style: new TextStyle(
+                        fontSize: 20.0,
+                        fontFamily: "Round",
+                        color: Colors.white
+                      )
+                    ),
+
+                    new Container(
+                      margin: const EdgeInsets.only(top: 5.0, bottom: 13.0),
+                      child: new Image.asset('assets/images/publish_work_line.png'),
+                    ),
+
+                    new Wrap(
+
+                    )
+                  ],
+                ),
+              )
             ),
           ),
 
@@ -97,7 +123,19 @@ class RoundInnerSquareBox extends StatelessWidget {
   final Widget child;
 
   @override
-  Widget build (BuildContext context) {
-    
+  Widget build(BuildContext context) {
+    return new ClipRRect(
+      borderRadius: const BorderRadius.all(const Radius.circular(16.0)),
+      child: new Container(
+        color: const Color(0xFFF0D5A9),
+        padding: const EdgeInsets.all(gap),
+        child: new Container(
+          child: new Container(
+            color:  const Color(0xFF3C594E),
+            child: child,
+          )
+        )
+      ),
+    );
   }
 }
