@@ -125,6 +125,36 @@ class SamplePageContent extends StatelessWidget {
           ),
 
           // Line 4
+          new LineTips(
+            title: new Text("給家长发个通知吧", style: new TextStyle(fontSize: 14.0, color: const Color(0xFF757085))),
+          ),
+
+          // Line 5
+          new Container(
+            margin: const EdgeInsets.only(left: 32.0),
+            height: 60.0,
+            child: new Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                new IconButton(
+                  padding: EdgeInsets.zero,
+                  iconSize: 60.0,
+                  icon: new Image.asset("assets/images/share_wechat.png"),
+                  onPressed: () {
+                    print('share to wechat');
+                  },
+                ),
+                new IconButton(
+                  padding: EdgeInsets.only(left: 32.0),
+                  iconSize: 60.0,
+                  icon: new Image.asset("assets/images/share_qq.png"),
+                  onPressed: () {
+                    print('share to qq');
+                  },
+                )
+              ],
+            ),
+          )
         ],
       ),
     );
@@ -182,7 +212,7 @@ class LineTips extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new Padding (
+    return new Padding(
       padding: defaultMargin,
       child: new Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
