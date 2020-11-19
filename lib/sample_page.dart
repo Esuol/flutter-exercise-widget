@@ -76,34 +76,68 @@ class SamplePageContent extends StatelessWidget {
           new Container(
             margin: const EdgeInsets.fromLTRB(6.0, 24.0, 6.0, 30.0),
             child: new RoundInnerSquareBox(
-              child: new Container(
-                padding: const EdgeInsets.fromLTRB(24.0, 28.0, 24.0, 12.0),
-                width: double.infinity,
-                child: new Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    new Text(
-                      "unit 1 lesson e about animal",
-                      style: new TextStyle(
-                        fontSize: 20.0,
-                        fontFamily: "Round",
-                        color: Colors.white
+                child: new Container(
+              padding: const EdgeInsets.fromLTRB(24.0, 28.0, 24.0, 12.0),
+              width: double.infinity,
+              child: new Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  new Text("unit 1 lesson e about animal",
+                      style: new TextStyle(fontSize: 20.0, fontFamily: "Round", color: Colors.white)),
+                  new Container(
+                    margin: const EdgeInsets.only(top: 5.0, bottom: 13.0),
+                    child: new Image.asset('assets/images/publish_work_line.png'),
+                  ),
+                  new Wrap(
+                    alignment: WrapAlignment.start,
+                    children: <Widget>[
+                      new WorkTotalItem(
+                        title: "课文跟读 1"
+                      ),
+                       new WorkTotalItem(
+                        title: "课文跟读 2"
+                      ),
+                       new WorkTotalItem(
+                        title: "课文跟读 3"
+                      ),
+                       new WorkTotalItem(
+                        title: "课文跟读 4"
                       )
-                    ),
-
-                    new Container(
-                      margin: const EdgeInsets.only(top: 5.0, bottom: 13.0),
-                      child: new Image.asset('assets/images/publish_work_line.png'),
-                    ),
-
-                    new Wrap(
-
+                    ],
+                  ),
+                  new Container(
+                    margin: const EdgeInsets.only(left: 178.0),
+                    child: new Stack(
+                      children: <Widget>[
+                        new Image.asset('assets/images/publish_work_sign.png'),
+                        new Positioned(
+                          left: 4.0,
+                          top: 4.0,
+                          child: new Text(
+                            "预习",
+                            style: new TextStyle(
+                              fontSize: 14.0,
+                              color: Colors.white
+                            ),
+                          )
+                        ),
+                      ],
                     )
-                  ],
-                ),
-              )
-            ),
+                  ),
+                  new Container(
+                    alignment: Alignment.topRight,
+                    child: new Text(
+                      "明天12.截止",
+                      style: new TextStyle(
+                        fontSize: 14.0,
+                        color: const Color(0xFFFFC1C1)
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            )),
           ),
 
           // Line 4
@@ -127,15 +161,33 @@ class RoundInnerSquareBox extends StatelessWidget {
     return new ClipRRect(
       borderRadius: const BorderRadius.all(const Radius.circular(16.0)),
       child: new Container(
-        color: const Color(0xFFF0D5A9),
-        padding: const EdgeInsets.all(gap),
-        child: new Container(
+          color: const Color(0xFFF0D5A9),
+          padding: const EdgeInsets.all(gap),
           child: new Container(
-            color:  const Color(0xFF3C594E),
+              child: new Container(
+            color: const Color(0xFF3C594E),
             child: child,
-          )
+          ))),
+    );
+  }
+}
+
+class WorkTotalItem extends StatelessWidget {
+  WorkTotalItem({this.title});
+
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return new Container(
+      padding: const EdgeInsets.all(6.0),
+      child: new Text(
+        "$title",
+        style: new TextStyle(
+          fontSize: 14.0,
+          color: Colors.white
         )
-      ),
+      )
     );
   }
 }
