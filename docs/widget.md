@@ -77,5 +77,70 @@ _element.markNeedsBuild();
 
 markNeedsBuild内部，则是通过标记element为diry，在下一帧的时候重建（rebuild）。可以看出setState并不是立即生效，它只是将widget进行了标记，真正的rebuild操作，则是等到下一帧的时候才会去进行。
 
+#### StatefulWidget和StatelessWidget
+
+StatefulWidget和StatelessWidget如下所示
+
+statelessWidget
+
+  cosnstructor
+      |
+ —— build
+｜    |
+ —————
+
+statefulWidget
+   cosnstructor
+      |
+ —— createState
+｜    |
+ —————
+
+#### StatelessWidget
+
+对于StatelessWidget，build方法会在如下三种情况下调用，
+
+widget第一次被插入到树中；
+
+widget的父节点更改了配置（configuration）；
+
+widget依赖的InheritedWidget改变了。
+
+```dart
+class GreenFrog extends StatelessWidget {
+  const GreenFrog({ Key key }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return new Container(color: const Color(0xFF2DBD3A));
+  }
+}
+
+```
+
+#### StatefulWidget
+
+StatefulWidget的两个主要类别：
+
+在initState中创建资源，在dispose中销毁，但是不依赖于InheritedWidget或者调用setState方法，这类widget基本上用在一个应用或者页面的root；
+
+使用setState或者依赖于InheritedWidget，这种在营业生命周期中会被重建（rebuild）很多次。
+
+
+```dart
+class YellowBird extends StatefulWidget {
+  const YellowBird({ Key key }) : super(key: key);
+
+  @override
+  _YellowBirdState createState() => new _YellowBirdState();
+}
+
+class _YellowBirdState extends State<YellowBird> {
+  @override
+  Widget build(BuildContext context) {
+    return new Container(color: const Color(0xFFFFE306));
+  }
+}
+```
 
 
