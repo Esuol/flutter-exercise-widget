@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(
-    new Center(
-      child: new Text(
-        'hello world',
-        textDirection: TextDirection.ltr,
-      ),
-    ),
-  );
-}
+
+// void main() {
+//   runApp(
+//     new Center(
+//       child: new Text(
+//         'hello world',
+//         textDirection: TextDirection.ltr,
+//       ),
+//     ),
+//   );
+// }
 
 class MyAppBar extends StatelessWidget {
   MyAppBar({this.title});
@@ -56,18 +57,19 @@ class MyScaffold extends StatelessWidget {
       child: new Column(
         children: <Widget>[
           new MyAppBar(
-            title: new Text(
-              'Example title',
-              style: Theme.of(context).primaryTextTheme.title
-            ),
+            title: new Text('Example title', style: Theme.of(context).primaryTextTheme.title),
           ),
           new Expanded(
             child: new Center(
-              child: new Text('hello, world'),
+              child: new Text('hellos, world'),
             ),
           ),
         ],
       ),
     );
   }
+}
+
+void main() {
+  runApp(new MaterialApp(title: 'my app', home: new MyScaffold()));
 }
