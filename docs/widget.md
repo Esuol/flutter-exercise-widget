@@ -59,5 +59,23 @@ defunct：State.dispose被调用后，State对象不能够被构建。
 
 State中比较重要的一个方法是setState，当修改状态时，widget会被更新。比方说点击CheckBox，会出现选中和非选中状态之间的切换，就是通过修改状态来达到的。
 
+查看setState源码，在一些异常的情况下将会抛出异常：
+
+传入的为null；
+
+处在defunct阶段；
+
+created阶段还没有被加载（mounted）；
+
+参数返回一个Future对象。
+
+检查完一系列异常后，最后调用代码如下：
+
+```dart
+_element.markNeedsBuild();
+```
+
+markNeedsBuild内部，则是通过标记element为diry，在下一帧的时候重建（rebuild）。可以看出setState并不是立即生效，它只是将widget进行了标记，真正的rebuild操作，则是等到下一帧的时候才会去进行。
+
 
 
