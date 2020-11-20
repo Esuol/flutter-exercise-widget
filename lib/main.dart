@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_app_2/example/shop/shopList.dart';
+import 'package:my_app_2/example/shop/shopItem.dart';
 import 'package:my_app_2/sample_page.dart';
 import 'package:my_app_2/counter_1.dart';
 
@@ -13,6 +15,15 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.green,
         ),
         home: new MyHomePage(title: 'flutter demo home page'));
+  }
+}
+
+class ShopPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new ShoppingList(
+      products: <Product>[new Product(name: 'Eggs'), new Product(name: 'Flowers'), new Product(name: 'dogs')],
+    );
   }
 }
 
@@ -66,13 +77,22 @@ class _MyHomePageState extends State<MyHomePage> {
             new RaisedButton(
               onPressed: () {
                 Navigator.push(
-                  context,
-                  new MaterialPageRoute(
-                    builder: (context) => (new Counter()),
-                  )
-                );
+                    context,
+                    new MaterialPageRoute(
+                      builder: (context) => (new Counter()),
+                    ));
               },
               child: new Text('跳转counter页面'),
+            ),
+            new RaisedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    new MaterialPageRoute(
+                      builder: (context) => (new ShopPage()),
+                    ));
+              },
+              child: new Text('跳转ShopList页面'),
             ),
           ],
         ),
