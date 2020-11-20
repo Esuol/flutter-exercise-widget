@@ -62,7 +62,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 "点击我跳转到Sample页面",
                 style: new TextStyle(fontSize: 16.0, color: Colors.red),
               ),
-            )
+            ),
+            new RaisedButton(
+              onPressed: _incrementCounter,
+              child: new Text('increment'),
+            ),
           ],
         ),
       ),
