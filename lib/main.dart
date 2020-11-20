@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_app_2/sample_page.dart';
+import 'package:my_app_2/counter_1.dart';
 
 void main() => runApp(new MyApp());
 
@@ -11,8 +12,7 @@ class MyApp extends StatelessWidget {
         theme: new ThemeData(
           primarySwatch: Colors.green,
         ),
-        home: new MyHomePage(title: 'flutter demo home page')
-    );
+        home: new MyHomePage(title: 'flutter demo home page'));
   }
 }
 
@@ -64,8 +64,15 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             new RaisedButton(
-              onPressed: _incrementCounter,
-              child: new Text('increment'),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  new MaterialPageRoute(
+                    builder: (context) => (new Counter()),
+                  )
+                );
+              },
+              child: new Text('跳转counter页面'),
             ),
           ],
         ),
