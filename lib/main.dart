@@ -11,7 +11,8 @@ class MyApp extends StatelessWidget {
         theme: new ThemeData(
           primarySwatch: Colors.green,
         ),
-        home: new MyHomePage(title: 'flutter demo home page'));
+        home: new MyHomePage(title: 'flutter demo home page')
+    );
   }
 }
 
@@ -46,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
             new Text('You have pushed the button this many times:'),
             new Text(
               "$_counter",
-              style: Theme.of(context).textTheme.display1,
+              style: Theme.of(context).textTheme.headline4,
             ),
             new GestureDetector(
               onTap: () {
