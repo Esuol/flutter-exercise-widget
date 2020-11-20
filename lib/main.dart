@@ -1,75 +1,75 @@
 import 'package:flutter/material.dart';
+import 'package:my_app_2/sample_page.dart';
 
+void main() => runApp(new MyApp());
 
-// void main() {
-//   runApp(
-//     new Center(
-//       child: new Text(
-//         'hello world',
-//         textDirection: TextDirection.ltr,
-//       ),
-//     ),
-//   );
-// }
-
-class MyAppBar extends StatelessWidget {
-  MyAppBar({this.title});
-
-  // Widget子类中的字段往往都会定义为"final"
-
-  final Widget title;
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Container(
-      height: 56.0, // 单位是逻辑上的像素（并非真实的像素，类似于浏览器中的像素）
-      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-      decoration: new BoxDecoration(color: Colors.blue[500]),
-      // Row 是水平方向的线性布局（linear layout）
-      child: new Row(
-        // Row 是水平方向的线性布局（linear layout）
-        children: <Widget>[
-          new IconButton(
-            icon: new Icon(Icons.menu),
-            tooltip: 'navigation menu',
-            onPressed: null, // null 会禁用button
-          ),
-          new Expanded(
-            child: title,
-          ),
-          new IconButton(
-            icon: new Icon(Icons.search),
-            tooltip: 'search',
-            onPressed: null,
-          )
-        ],
-      ),
-    );
+    return new MaterialApp(
+        title: 'flutter demo',
+        theme: new ThemeData(
+          primarySwatch: Colors.green,
+        ),
+        home: new MyHomePage(title: 'flutter demo home page'));
   }
 }
 
-class MyScaffold extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key key, this.title}) : super(key: key);
+
+  final String title;
+
+  @override
+  _MyHomePageState createState() => new _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    // // Material 是UI呈现的“一张纸”
-    return new Material(
-      // Column is 垂直方向布局
-      child: new Column(
-        children: <Widget>[
-          new MyAppBar(
-            title: new Text('Example title', style: Theme.of(context).primaryTextTheme.title),
-          ),
-          new Expanded(
-            child: new Center(
-              child: new Text('hellos, world'),
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text(widget.title),
+      ),
+      body: new Center(
+        child: new Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            new Text('You have pushed the button this many times:'),
+            new Text(
+              "$_counter",
+              style: Theme.of(context).textTheme.display1,
             ),
-          ),
-        ],
+            new GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  new MaterialPageRoute(
+                    builder: (context) => (new SamplePage()),
+                  ),
+                );
+              },
+              child: new Text(
+                "点击我跳转到Sample页面",
+                style: new TextStyle(fontSize: 16.0, color: Colors.red),
+              ),
+            )
+          ],
+        ),
+      ),
+      floatingActionButton: new FloatingActionButton(
+        onPressed: _incrementCounter,
+        tooltip: 'Increment',
+        child: new Icon(Icons.add),
       ),
     );
   }
-}
-
-void main() {
-  runApp(new MaterialApp(title: 'my app', home: new MyScaffold()));
 }
