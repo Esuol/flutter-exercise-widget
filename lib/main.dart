@@ -8,6 +8,7 @@ import 'package:my_app_2/counter_1.dart';
 import 'package:my_app_2/example/switch/index3.dart';
 import 'package:my_app_2/baseWidgets/container.dart';
 import 'package:my_app_2/baseWidgets/column.dart';
+import 'package:my_app_2/baseWidgets/image.dart';
 
 void main() => runApp(new MyApp());
 
@@ -17,7 +18,7 @@ class CustomPage extends StatelessWidget {
     return new Scaffold(
         appBar: new AppBar(title: new Text('组件库练习')),
         body: new Center(
-          child: new ColumnScreen(),
+          child: new ImageScreen(),
         ));
   }
 }
