@@ -10,6 +10,7 @@ import 'package:my_app_2/baseWidgets/container.dart';
 import 'package:my_app_2/baseWidgets/column.dart';
 import 'package:my_app_2/baseWidgets/image.dart';
 import 'package:my_app_2/baseWidgets/text.dart';
+import 'package:my_app_2/baseWidgets/icon.dart';
 
 void main() => runApp(new MyApp());
 
@@ -19,7 +20,7 @@ class CustomPage extends StatelessWidget {
     return new Scaffold(
         appBar: new AppBar(title: new Text('组件库练习')),
         body: new Center(
-          child: new TextScreen(name: '小明'),
+          child: new IconScreen(),
         ));
   }
 }
