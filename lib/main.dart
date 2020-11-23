@@ -4,7 +4,8 @@ import 'package:my_app_2/example/shop/shopItem.dart';
 import 'package:my_app_2/sample_page.dart';
 import 'package:my_app_2/counter_1.dart';
 // import 'package:my_app_2/example/switch/index.dart';
-import 'package:my_app_2/example/switch/index2.dart';
+// import 'package:my_app_2/example/switch/index2.dart';
+import 'package:my_app_2/example/switch/index3.dart';
 
 void main() => runApp(new MyApp());
 
