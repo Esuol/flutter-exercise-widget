@@ -3,6 +3,8 @@ import 'package:my_app_2/example/shop/shopList.dart';
 import 'package:my_app_2/example/shop/shopItem.dart';
 import 'package:my_app_2/sample_page.dart';
 import 'package:my_app_2/counter_1.dart';
+// import 'package:my_app_2/example/switch/index.dart';
+import 'package:my_app_2/example/switch/index2.dart';
 
 void main() => runApp(new MyApp());
 
@@ -24,6 +26,13 @@ class ShopPage extends StatelessWidget {
     return new ShoppingList(
       products: <Product>[new Product(name: 'Eggs'), new Product(name: 'Flowers'), new Product(name: 'dogs')],
     );
+  }
+}
+
+class SwitchPagg extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new Screen();
   }
 }
 
@@ -94,6 +103,16 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: new Text('跳转ShopList页面'),
             ),
+            new RaisedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    new MaterialPageRoute(
+                      builder: (context) => (new SwitchPagg()),
+                    ));
+              },
+              child: new Text('跳转sWitch页面'),
+            )
           ],
         ),
       ),
