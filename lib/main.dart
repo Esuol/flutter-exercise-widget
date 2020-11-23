@@ -6,8 +6,21 @@ import 'package:my_app_2/counter_1.dart';
 // import 'package:my_app_2/example/switch/index.dart';
 // import 'package:my_app_2/example/switch/index2.dart';
 import 'package:my_app_2/example/switch/index3.dart';
+import 'package:my_app_2/baseWidgets/container.dart';
+import 'package:my_app_2/baseWidgets/row.dart';
 
 void main() => runApp(new MyApp());
+
+class CustomPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+        appBar: new AppBar(title: new Text('组件库练习')),
+        body: new Center(
+          child: new RowScreen(),
+        ));
+  }
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -113,6 +126,16 @@ class _MyHomePageState extends State<MyHomePage> {
                     ));
               },
               child: new Text('跳转sWitch页面'),
+            ),
+            new RaisedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    new MaterialPageRoute(
+                      builder: (context) => (new CustomPage()),
+                    ));
+              },
+              child: new Text('跳转base组件练习页面'),
             )
           ],
         ),
