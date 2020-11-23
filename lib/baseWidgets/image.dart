@@ -10,8 +10,8 @@ class ImageScreen extends StatelessWidget {
         width: 300,
         height: 300,
         fit: BoxFit.cover,
-        color: Colors.red,
-        colorBlendMode: BlendMode.colorBurn,
+        //color: Colors.red,
+        //colorBlendMode: BlendMode.colorBurn,
         semanticLabel: '标签',
       ),
     );
