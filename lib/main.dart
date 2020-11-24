@@ -16,6 +16,7 @@ import 'package:my_app_2/baseWidgets/scaffold/scaffold.dart';
 import 'package:my_app_2/baseWidgets/scaffold/scaffold2.dart';
 import 'package:my_app_2/baseWidgets/appbar.dart';
 import 'package:my_app_2/MaterialComponents/constructorNav/bottomNavigationBar.dart';
+import 'package:my_app_2/MaterialComponents/constructorNav/tabbar.dart';
 
 void main() => runApp(new MyApp());
 
@@ -27,6 +28,10 @@ class CustomPage extends StatelessWidget {
         body: new Center(
           child: new BottomNavigationScreen(),
         ));
+    // body: DefaultTabController(
+    //   length: 3,
+    //   child: TabbbarScreen(),
+    // )
   }
 }
 
@@ -39,6 +44,10 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.green,
         ),
         home: new MyHomePage(title: 'flutter demo home page'));
+    // home: DefaultTabController(
+    //   length: 3,
+    //   child: TabbbarScreen(),
+    // ));
   }
 }
 
