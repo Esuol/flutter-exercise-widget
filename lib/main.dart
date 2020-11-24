@@ -12,6 +12,7 @@ import 'package:my_app_2/baseWidgets/image.dart';
 import 'package:my_app_2/baseWidgets/text.dart';
 import 'package:my_app_2/baseWidgets/icon.dart';
 import 'package:my_app_2/baseWidgets/button.dart';
+import 'package:my_app_2/baseWidgets/scaffold.dart';
 
 void main() => runApp(new MyApp());
 
@@ -21,7 +22,7 @@ class CustomPage extends StatelessWidget {
     return new Scaffold(
         appBar: new AppBar(title: new Text('组件库练习')),
         body: new Center(
-          child: new ButtonScreen(),
+          child: new ScaffoldScreen(),
         ));
   }
 }
