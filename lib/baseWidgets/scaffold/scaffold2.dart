@@ -20,7 +20,7 @@ class _ScaffoldState extends State<ScaffoldScreen2> {
       bottomNavigationBar: BottomAppBar(
           shape: const CircularNotchedRectangle(),
           child: Container(
-            height: 50.0,
+            height: 40.0,
           )),
       floatingActionButton: FloatingActionButton(
         onPressed: () => {setState(() => _count++)},
