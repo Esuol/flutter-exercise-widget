@@ -36,8 +36,19 @@ class AppBarScreen extends StatelessWidget {
             )
           ],
         ),
-        body: const Center(
-          child: const Text('this is the home page', style: TextStyle(fontSize: 24.0)),
+        body: Column(
+          children: <Widget>[
+            const Center(
+              child: const Text('this is the home page', style: TextStyle(fontSize: 24.0)),
+            ),
+            Container(
+              child: const Placeholder(
+                fallbackWidth: 300,
+                fallbackHeight: 50,
+                color: Colors.red,
+              ),
+            )
+          ],
         ));
   }
 }
