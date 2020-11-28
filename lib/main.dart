@@ -31,7 +31,7 @@ class CustomPage extends StatelessWidget {
     return new Scaffold(
         appBar: new AppBar(title: new Text('组件库练习')),
         body: new Center(
-          child: new IconButtonScreen(),
+          child: new IconButtonStateScreen(),
         ));
     // body: DefaultTabController(
     //   length: 3,
