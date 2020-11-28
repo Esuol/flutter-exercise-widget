@@ -18,3 +18,23 @@ class FloatingActionButtonScreen extends StatelessWidget {
     );
   }
 }
+
+class FloatingActionButtonScreen2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Floating Action Button Label'),
+      ),
+      body: Center(
+        child: Text('press the button with a label'),
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () => {},
+        label: Text('Approve'),
+        icon: Icon(Icons.thumb_up),
+        backgroundColor: Colors.pink,
+      ),
+    );
+  }
+}
