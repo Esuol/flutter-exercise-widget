@@ -10,6 +10,7 @@ class CheckBoxStateScreen extends StatefulWidget {
 class _CheckBoxState extends State<CheckBoxStateScreen> {
   bool _switchSelected = true;
   bool _checkboxSelected = true;
+  bool _radioSelected = true;
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +31,17 @@ class _CheckBoxState extends State<CheckBoxStateScreen> {
             onChanged: (value) => {
               setState(() {
                 _checkboxSelected = value;
+              })
+            },
+          ),
+          Radio(
+            value: _radioSelected,
+            groupValue: _radioSelected,
+            // toggleable: true,
+            onChanged: (value) => {
+              setState(() {
+                print('value $value');
+                _radioSelected = value;
               })
             },
           )
