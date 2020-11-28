@@ -19,6 +19,7 @@ import 'package:my_app_2/MaterialComponents/constructorNav/bottomNavigationBar.d
 import 'package:my_app_2/MaterialComponents/constructorNav/tabbar.dart';
 import 'package:my_app_2/MaterialComponents/constructorNav/drawer.dart';
 import 'package:my_app_2/MaterialComponents/button/button.dart';
+import 'package:my_app_2/MaterialComponents/button/flatingActionButton.dart';
 
 void main() => runApp(new MyApp());
 
@@ -28,7 +29,7 @@ class CustomPage extends StatelessWidget {
     return new Scaffold(
         appBar: new AppBar(title: new Text('组件库练习')),
         body: new Center(
-          child: new CustomButtonScreen(),
+          child: new FloatingActionButtonScreen(),
         ));
     // body: DefaultTabController(
     //   length: 3,
