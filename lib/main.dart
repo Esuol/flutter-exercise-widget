@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:my_app_2/example/shop/shopList.dart';
 import 'package:my_app_2/example/shop/shopItem.dart';
 import 'package:my_app_2/sample_page.dart';
@@ -27,6 +28,7 @@ import 'package:my_app_2/MaterialComponents/Input/textFiled.dart';
 import 'package:my_app_2/MaterialComponents/Input/checkAndSwitch.dart';
 import 'package:my_app_2/MaterialComponents/Input/radio.dart';
 import 'package:my_app_2/MaterialComponents/Input/slider.dart';
+import 'package:my_app_2/MaterialComponents/Input/date.dart';
 
 void main() => runApp(new MyApp());
 
@@ -36,7 +38,7 @@ class CustomPage extends StatelessWidget {
     return new Scaffold(
         appBar: new AppBar(title: new Text('组件库练习')),
         body: new Center(
-          child: new SliderScreen(),
+          child: new DatePickerScreen(),
         ));
     // body: DefaultTabController(
     //   length: 3,
@@ -53,6 +55,12 @@ class MyApp extends StatelessWidget {
         theme: new ThemeData(
           primarySwatch: Colors.green,
         ),
+        localizationsDelegates: [
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+        ],
+        supportedLocales: [const Locale('zh', 'CH'), const Locale('en', 'US')],
+        locale: Locale('zh'),
         home: new MyHomePage(title: 'flutter demo home page'));
     // home: DefaultTabController(
     //   length: 3,
