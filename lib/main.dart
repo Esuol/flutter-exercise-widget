@@ -23,6 +23,8 @@ import 'package:my_app_2/MaterialComponents/button/flatingActionButton.dart';
 import 'package:my_app_2/MaterialComponents/button/flatButton.dart';
 import 'package:my_app_2/MaterialComponents/button/iconButton.dart';
 import 'package:my_app_2/MaterialComponents/Input/textFiled.dart';
+import 'package:my_app_2/MaterialComponents/Input/textFiled.dart';
+import 'package:my_app_2/MaterialComponents/Input/checkAndSwitch.dart';
 
 void main() => runApp(new MyApp());
 
@@ -32,7 +34,7 @@ class CustomPage extends StatelessWidget {
     return new Scaffold(
         appBar: new AppBar(title: new Text('组件库练习')),
         body: new Center(
-          child: new TextFieldStateScreen(),
+          child: new CheckBoxStateScreen(),
         ));
     // body: DefaultTabController(
     //   length: 3,
