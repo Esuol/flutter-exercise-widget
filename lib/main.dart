@@ -29,6 +29,7 @@ import 'package:my_app_2/MaterialComponents/Input/checkAndSwitch.dart';
 import 'package:my_app_2/MaterialComponents/Input/radio.dart';
 import 'package:my_app_2/MaterialComponents/Input/slider.dart';
 import 'package:my_app_2/MaterialComponents/Input/date.dart';
+import 'package:my_app_2/MaterialComponents/alert/simpleDialog.dart';
 
 void main() => runApp(new MyApp());
 
@@ -38,7 +39,7 @@ class CustomPage extends StatelessWidget {
     return new Scaffold(
         appBar: new AppBar(title: new Text('组件库练习')),
         body: new Center(
-          child: new DatePickerScreen(),
+          child: new SimpleDialogScreen(),
         ));
     // body: DefaultTabController(
     //   length: 3,

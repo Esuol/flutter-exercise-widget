@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 
 class SimpleDialogScreen extends StatelessWidget {
@@ -44,10 +42,11 @@ class SimpleDialogScreen extends StatelessWidget {
 
   Widget _contentWidget(BuildContext context, String content) {
     return SimpleDialogOption(
-      child: Center( child: Text(content),),
-      onPressed: () {
-        Navigator.of(context).pop();
-      }
-    );
+        child: Center(
+          child: Text(content),
+        ),
+        onPressed: () {
+          Navigator.of(context).pop();
+        });
   }
 }
