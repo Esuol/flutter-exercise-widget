@@ -30,17 +30,24 @@ class SimpleDialogScreen extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return SimpleDialog(
-          title: Text(
-            'this is simple dialog title',
-            style: TextStyle(fontSize:  20.0, fontWeight: FontWeight.bold)),
-            children: <Widget>[
-              _contentWidget(context, 'options1'),
-              _contentWidget(context, 'options2'),
-              _contentWidget(context, 'options3'),
-              _contentWidget(context, 'options4'),
-            ],
+          title: Text('this is simple dialog title', style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold)),
+          children: <Widget>[
+            _contentWidget(context, 'options1'),
+            _contentWidget(context, 'options2'),
+            _contentWidget(context, 'options3'),
+            _contentWidget(context, 'options4'),
+          ],
         );
       },
+    );
+  }
+
+  Widget _contentWidget(BuildContext context, String content) {
+    return SimpleDialogOption(
+      child: Center( child: Text(content),),
+      onPressed: () {
+        Navigator.of(context).pop();
+      }
     );
   }
 }
