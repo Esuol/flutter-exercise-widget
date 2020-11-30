@@ -32,6 +32,7 @@ import 'package:my_app_2/MaterialComponents/Input/date.dart';
 import 'package:my_app_2/MaterialComponents/alert/simpleDialog.dart';
 import 'package:my_app_2/MaterialComponents/alert/alertDialog.dart';
 import 'package:my_app_2/MaterialComponents/alert/bottomSheets.dart';
+import 'package:my_app_2/MaterialComponents/alert/expansionPanel.dart';
 
 void main() => runApp(new MyApp());
 
@@ -41,7 +42,7 @@ class CustomPage extends StatelessWidget {
     return new Scaffold(
         appBar: new AppBar(title: new Text('组件库练习')),
         body: new Center(
-          child: new BottomSheet1Page(),
+          child: new ExpansionPanelPage(),
         ));
     // body: DefaultTabController(
     //   length: 3,
