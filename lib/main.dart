@@ -38,6 +38,7 @@ import 'package:my_app_2/MaterialComponents/infos/image.dart';
 import 'package:my_app_2/MaterialComponents/infos/icon.dart';
 import 'package:my_app_2/MaterialComponents/infos/chip.dart';
 import 'package:my_app_2/MaterialComponents/infos/toolTip.dart';
+import 'package:my_app_2/MaterialComponents/infos/datatable.dart';
 
 void main() => runApp(new MyApp());
 
@@ -47,7 +48,7 @@ class CustomPage extends StatelessWidget {
     return new Scaffold(
         appBar: new AppBar(title: new Text('组件库练习')),
         body: new Center(
-          child: new TooltipScreen2(),
+          child: new MyStatefulWidget(),
         ));
     // body: DefaultTabController(
     //   length: 3,
