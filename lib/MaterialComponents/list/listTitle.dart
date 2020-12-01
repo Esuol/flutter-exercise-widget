@@ -52,3 +52,4 @@ class ListTitleScreen1 extends StatelessWidget {
     );
   }
 }
+

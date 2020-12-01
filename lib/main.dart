@@ -42,6 +42,7 @@ import 'package:my_app_2/MaterialComponents/infos/datatable.dart';
 import 'package:my_app_2/MaterialComponents/infos/card.dart';
 import 'package:my_app_2/MaterialComponents/infos/linerProgress.dart';
 import 'package:my_app_2/MaterialComponents/list/listTitle.dart';
+import 'package:my_app_2/MaterialComponents/list/listTitle2.dart';
 
 void main() => runApp(new MyApp());
 
@@ -51,7 +52,7 @@ class CustomPage extends StatelessWidget {
     return new Scaffold(
         appBar: new AppBar(title: new Text('组件库练习')),
         body: new Center(
-          child: new ListTitleScreen1(),
+          child: new MyStatelessWidget(),
         ));
     // body: DefaultTabController(
     //   length: 3,
