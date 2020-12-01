@@ -41,6 +41,7 @@ import 'package:my_app_2/MaterialComponents/infos/toolTip.dart';
 import 'package:my_app_2/MaterialComponents/infos/datatable.dart';
 import 'package:my_app_2/MaterialComponents/infos/card.dart';
 import 'package:my_app_2/MaterialComponents/infos/linerProgress.dart';
+import 'package:my_app_2/MaterialComponents/list/listTitle.dart';
 
 void main() => runApp(new MyApp());
 
@@ -50,7 +51,7 @@ class CustomPage extends StatelessWidget {
     return new Scaffold(
         appBar: new AppBar(title: new Text('组件库练习')),
         body: new Center(
-          child: new LinearProgressScreen(),
+          child: new ListTitleScreen1(),
         ));
     // body: DefaultTabController(
     //   length: 3,
