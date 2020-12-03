@@ -46,6 +46,7 @@ import 'package:my_app_2/MaterialComponents/list/listTitle2.dart';
 import 'package:my_app_2/MaterialComponents/list/listTitle3.dart';
 import 'package:my_app_2/MaterialComponents/list/step.dart';
 import 'package:my_app_2/MaterialComponents/list/divider.dart';
+import 'package:my_app_2/example/router/tipRoute.dart';
 
 void main() => runApp(new MyApp());
 
@@ -55,7 +56,7 @@ class CustomPage extends StatelessWidget {
     return new Scaffold(
         appBar: new AppBar(title: new Text('组件库练习')),
         body: new Center(
-          child: new DividerScreen(),
+          child: new RouterTestRoute(),
         ));
     // body: DefaultTabController(
     //   length: 3,
