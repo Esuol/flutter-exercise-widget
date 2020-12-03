@@ -49,3 +49,35 @@ onPressed: () {
   //}));
 },
 ```
+
+### 命名路由参数传递
+
+在Flutter最初的版本中，命名路由是不能传递参数的，后来才支持了参数；下面展示命名路由如何传递并获取路由参数：
+
+我们先注册一个路由：
+
+```dart
+routes:{
+   "new_page":(context) => EchoRoute(),
+  } ,
+```
+
+在路由页通过RouteSetting对象获取路由参数：
+
+```dart
+class EchoRoute extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    //获取路由参数
+    var args=ModalRoute.of(context).settings.arguments;
+    //...省略无关代码
+  }
+}
+```
+
+在打开路由时传递参数
+
+```dart
+Navigator.of(context).pushNamed("new_page", arguments: "hi");
+```
