@@ -33,6 +33,7 @@ dependencies:
     sdk: flutter
   simple_tooltip: ^0.1.16
   steps: ^1.0.1
+  english_words: ^3.1.5
 
 dev_dependencies:
   flutter_test:
